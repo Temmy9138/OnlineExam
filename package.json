@@ -1,0 +1,17 @@
+{
+  "name": "exampro-signup",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ExamPro demo backend with SQLite admin signup",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.6",
+    "nodemailer": "^10.0.15"
+  }
+}

@@ -1,0 +1,2505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ExamHub | Learn. Test. Succeed.</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <style>
+        /* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+
+    --primary: #5b4bdb;
+    --primary-dark: #4435b8;
+
+    --secondary: #8175ed;
+
+    --dark: #20213a;
+
+    --light-text: #777a91;
+
+    --background: #f7f7ff;
+
+    --white: #ffffff;
+
+    --border: #e8e8f2;
+
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family: "Poppins", sans-serif;
+
+    color: var(--dark);
+
+    background: var(--white);
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    background:
+        rgba(255,255,255,0.95);
+
+    backdrop-filter: blur(10px);
+
+    z-index: 1000;
+
+    border-bottom:
+        1px solid rgba(0,0,0,0.04);
+}
+
+
+.nav-container {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    height: 78px;
+
+    padding:
+        0 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* Logo */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--dark);
+
+    text-decoration: none;
+
+    font-size: 23px;
+
+    font-weight: 700;
+}
+
+
+.logo-icon {
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary);
+
+    color: white;
+
+    border-radius: 12px;
+}
+
+
+.logo span span {
+
+    color: var(--primary);
+}
+
+
+/* Navigation */
+
+.nav-links {
+
+    display: flex;
+
+    gap: 35px;
+}
+
+
+.nav-links a {
+
+    text-decoration: none;
+
+    color: var(--light-text);
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+
+.nav-links a:hover {
+
+    color: var(--primary);
+}
+
+
+/* Buttons */
+
+.nav-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.login-link {
+
+    text-decoration: none;
+
+    color: var(--primary);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    padding: 10px 17px;
+}
+
+
+.signup-link {
+
+    text-decoration: none;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    padding: 11px 20px;
+
+    border-radius: 9px;
+
+    transition: 0.3s;
+}
+
+
+.signup-link:hover {
+
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+}
+
+
+/* Mobile menu */
+
+.menu-btn {
+
+    display: none;
+
+    border: none;
+
+    background: none;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    padding:
+        150px 25px 80px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7f7ff,
+            #eeeeff
+        );
+
+    overflow: hidden;
+}
+
+
+.hero-container {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    align-items: center;
+
+    gap: 60px;
+}
+
+
+/* Hero text */
+
+.hero-tag {
+
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(91,75,219,0.10);
+
+    color: var(--primary);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 20px;
+}
+
+
+.hero-content h1 {
+
+    font-size:
+        clamp(45px, 5vw, 68px);
+
+    line-height: 1.08;
+
+    margin-bottom: 25px;
+}
+
+
+.hero-content h1 span {
+
+    display: block;
+
+    color: var(--primary);
+}
+
+
+.hero-content > p {
+
+    max-width: 580px;
+
+    color: var(--light-text);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+}
+
+
+/* Hero buttons */
+
+.hero-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 40px;
+}
+
+
+.primary-btn,
+.secondary-btn {
+
+    text-decoration: none;
+
+    padding: 14px 22px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+
+.primary-btn {
+
+    display: flex;
+
+    gap: 12px;
+
+    align-items: center;
+
+    background: var(--primary);
+
+    color: white;
+}
+
+
+.primary-btn:hover {
+
+    background: var(--primary-dark);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(91,75,219,0.25);
+}
+
+
+.secondary-btn {
+
+    border:
+        1px solid var(--border);
+
+    color: var(--dark);
+
+    background: white;
+}
+
+
+.secondary-btn:hover {
+
+    border-color: var(--primary);
+
+    color: var(--primary);
+}
+
+
+/* Stats */
+
+.hero-stats {
+
+    display: flex;
+
+    gap: 40px;
+}
+
+
+.hero-stats div {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.hero-stats strong {
+
+    font-size: 22px;
+
+    color: var(--dark);
+}
+
+
+.hero-stats span {
+
+    font-size: 11px;
+
+    color: var(--light-text);
+}
+
+
+/* =========================
+   EXAM ILLUSTRATION
+========================= */
+
+.hero-visual {
+
+    min-height: 500px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+}
+
+
+.circle {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background:
+        rgba(91,75,219,0.08);
+}
+
+
+.circle-one {
+
+    width: 400px;
+    height: 400px;
+}
+
+
+.circle-two {
+
+    width: 300px;
+    height: 300px;
+
+    background:
+        rgba(129,117,237,0.08);
+}
+
+
+/* Exam card */
+
+.exam-card {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 410px;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(50,45,100,0.15);
+}
+
+
+.exam-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-bottom: 20px;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+
+.exam-top small {
+
+    color: var(--primary);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.exam-top h3 {
+
+    margin-top: 5px;
+
+    font-size: 17px;
+}
+
+
+.timer {
+
+    padding: 7px 10px;
+
+    border-radius: 7px;
+
+    background:
+        #f1efff;
+
+    color: var(--primary);
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+/* Question */
+
+.question {
+
+    padding: 22px 0;
+}
+
+
+.question > span {
+
+    font-size: 10px;
+
+    color: var(--light-text);
+}
+
+
+.question h4 {
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-top: 10px;
+}
+
+
+/* Answers */
+
+.answers {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+
+.answer {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 11px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 8px;
+
+    font-size: 11px;
+}
+
+
+.answer span {
+
+    width: 23px;
+    height: 23px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 6px;
+
+    background: #f4f4fa;
+
+    font-size: 9px;
+
+    font-weight: 600;
+}
+
+
+.answer.selected {
+
+    border-color:
+        var(--primary);
+
+    background:
+        rgba(91,75,219,0.06);
+
+    color: var(--primary);
+}
+
+
+.answer.selected b {
+
+    margin-left: auto;
+}
+
+
+/* Progress */
+
+.exam-progress {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 22px;
+}
+
+
+.progress-bar {
+
+    height: 5px;
+
+    flex: 1;
+
+    border-radius: 20px;
+
+    background: #eeeeF5;
+
+    overflow: hidden;
+}
+
+
+.progress-bar div {
+
+    width: 25%;
+
+    height: 100%;
+
+    background: var(--primary);
+}
+
+
+.exam-progress span {
+
+    font-size: 9px;
+
+    color: var(--light-text);
+}
+
+
+/* Floating cards */
+
+.floating-card {
+
+    position: absolute;
+
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 13px 17px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(50,45,100,0.12);
+
+    animation:
+        float 3s ease-in-out infinite;
+}
+
+
+.score-card {
+
+    top: 65px;
+
+    right: 15px;
+}
+
+
+.student-card {
+
+    bottom: 55px;
+
+    left: 5px;
+
+    animation-delay: 1s;
+}
+
+
+@keyframes float {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+.floating-icon,
+.student-icon {
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background:
+        #efedff;
+
+    color: var(--primary);
+}
+
+
+.floating-card strong {
+
+    display: block;
+
+    font-size: 13px;
+}
+
+
+.floating-card small {
+
+    display: block;
+
+    font-size: 8px;
+
+    color: var(--light-text);
+}
+
+
+/* =========================
+   SECTION GENERAL
+========================= */
+
+section:not(.hero) {
+
+    padding: 100px 25px;
+}
+
+
+.section-container {
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+.section-heading {
+
+    max-width: 650px;
+
+    margin-bottom: 55px;
+}
+
+
+.section-heading.center {
+
+    text-align: center;
+
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+
+.section-heading > span {
+
+    color: var(--primary);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.section-heading h2 {
+
+    font-size: 40px;
+
+    line-height: 1.2;
+
+    margin:
+        12px 0 17px;
+}
+
+
+.section-heading h2 strong {
+
+    color: var(--primary);
+}
+
+
+.section-heading p {
+
+    color: var(--light-text);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+
+    background: white;
+}
+
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.about-card {
+
+    padding: 30px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 16px;
+
+    transition: 0.3s;
+}
+
+
+.about-card:hover {
+
+    transform: translateY(-7px);
+
+    border-color:
+        var(--primary);
+
+    box-shadow:
+        0 15px 35px
+        rgba(50,45,100,0.08);
+}
+
+
+.about-icon {
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        #f0eeff;
+
+    font-size: 22px;
+
+    margin-bottom: 20px;
+}
+
+
+.about-card h3 {
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+
+
+.about-card p {
+
+    color: var(--light-text);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features {
+
+    background:
+        var(--background);
+}
+
+
+.feature-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+.feature-card {
+
+    position: relative;
+
+    padding: 30px;
+
+    background: white;
+
+    border-radius: 16px;
+
+    border:
+        1px solid var(--border);
+
+    overflow: hidden;
+}
+
+
+.feature-number {
+
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    font-size: 35px;
+
+    font-weight: 800;
+
+    color:
+        rgba(91,75,219,0.07);
+}
+
+
+.feature-icon {
+
+    font-size: 25px;
+
+    margin-bottom: 18px;
+}
+
+
+.feature-card h3 {
+
+    font-size: 16px;
+
+    margin-bottom: 10px;
+}
+
+
+.feature-card p {
+
+    color: var(--light-text);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.how-it-works {
+
+    background: white;
+}
+
+
+.steps {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.step {
+
+    text-align: center;
+
+    max-width: 180px;
+}
+
+
+.step-number {
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background:
+        var(--primary);
+
+    color: white;
+
+    font-weight: 700;
+}
+
+
+.step h3 {
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+}
+
+
+.step p {
+
+    color: var(--light-text);
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+
+.step-line {
+
+    width: 70px;
+
+    height: 1px;
+
+    background:
+        var(--border);
+
+    margin: 0 10px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.cta-container {
+
+    max-width: 700px;
+
+    margin: auto;
+}
+
+
+.cta h2 {
+
+    font-size: 40px;
+
+    line-height: 1.2;
+
+    margin-bottom: 15px;
+}
+
+
+.cta p {
+
+    color:
+        rgba(255,255,255,0.8);
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+}
+
+
+.cta-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 23px;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: var(--primary);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    background:
+        #18182c;
+
+    color: white;
+
+    padding: 55px 25px;
+}
+
+
+.footer-container {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+
+.footer-logo {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+
+.footer-logo > span > span {
+
+    color: #a59cff;
+}
+
+
+.footer-container > p {
+
+    max-width: 450px;
+
+    margin:
+        0 auto 25px;
+
+    color:
+        rgba(255,255,255,0.55);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+
+.footer-links {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-bottom: 30px;
+}
+
+
+.footer-links a {
+
+    color:
+        rgba(255,255,255,0.7);
+
+    text-decoration: none;
+
+    font-size: 11px;
+}
+
+
+.footer-links a:hover {
+
+    color: white;
+}
+
+
+.copyright {
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    color:
+        rgba(255,255,255,0.4);
+
+    font-size: 10px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+
+    .nav-links {
+
+        display: none;
+    }
+
+
+    .menu-btn {
+
+        display: block;
+    }
+
+
+    .hero-container {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+
+    .hero-content > p {
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .hero-buttons,
+    .hero-stats {
+
+        justify-content: center;
+    }
+
+
+    .hero-visual {
+
+        margin-top: 30px;
+    }
+
+
+    .feature-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .about-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .steps {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+
+        gap: 24px;
+    }
+
+
+    .step {
+
+        max-width: none;
+    }
+
+
+    .step-line {
+
+        display: none;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .nav-container {
+
+        height: 70px;
+
+        padding: 0 18px;
+    }
+
+
+    .nav-buttons {
+
+        display: none;
+    }
+
+
+    .hero {
+
+        padding:
+            120px 20px 60px;
+    }
+
+
+    .hero-content h1 {
+
+        font-size: clamp(35px, 9vw, 42px);
+    }
+
+
+    .hero-content > p {
+
+        font-size: 13px;
+    }
+
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .primary-btn,
+    .secondary-btn {
+
+        justify-content: center;
+
+        text-align: center;
+    }
+
+
+    .hero-stats {
+
+        justify-content: space-around;
+
+        gap: 16px;
+
+        flex-wrap: wrap;
+    }
+
+
+    .hero-visual {
+
+        min-height: 350px;
+
+        margin: 18px -8px 0;
+    }
+
+
+    .circle-one {
+
+        width: min(82vw, 340px);
+
+        height: min(82vw, 340px);
+    }
+
+
+    .circle-two {
+
+        width: min(62vw, 260px);
+
+        height: min(62vw, 260px);
+    }
+
+
+    .exam-card {
+
+        width: 100%;
+
+        max-width: 360px;
+
+        padding: 18px;
+    }
+
+
+    .floating-card {
+
+        gap: 8px;
+
+        padding: 10px 12px;
+    }
+
+
+    .score-card {
+
+        right: 0;
+
+        top: 45px;
+    }
+
+
+    .student-card {
+
+        left: 0;
+
+        bottom: 30px;
+    }
+
+
+    section:not(.hero) {
+
+        padding:
+            70px 20px;
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 31px;
+    }
+
+
+    .about-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .feature-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .steps {
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    .step-line {
+
+        width: 1px;
+
+        height: 40px;
+    }
+
+
+    .cta h2 {
+
+        font-size: 30px;
+    }
+
+
+    .footer-links {
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+
+    .steps {
+
+        display: flex;
+    }
+
+}
+
+
+@media (max-width: 380px) {
+
+    .logo {
+
+        gap: 7px;
+
+        font-size: 20px;
+    }
+
+
+    .logo-icon {
+
+        width: 36px;
+
+        height: 36px;
+    }
+
+
+    .hero {
+
+        padding-right: 16px;
+
+        padding-left: 16px;
+    }
+
+
+    .hero-visual {
+
+        min-height: 320px;
+    }
+
+
+    .exam-card {
+
+        padding: 15px;
+    }
+
+
+    .floating-card strong {
+
+        font-size: 11px;
+    }
+
+}
+
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+
+@media (max-width: 950px) {
+
+    .nav-links.mobile-open {
+
+        display: flex;
+
+        position: absolute;
+
+        top: 70px;
+
+        left: 0;
+
+        width: 100%;
+
+        padding: 20px;
+
+        background: white;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 20px;
+
+        box-shadow:
+            0 10px 25px
+            rgba(0,0,0,0.08);
+    }
+
+}
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <!-- Logo -->
+
+        <a href="index.html" class="logo">
+
+            <div class="logo-icon">
+                E
+            </div>
+
+            <span>
+                Exam<span>Hub</span>
+            </span>
+
+        </a>
+
+
+        <!-- Navigation -->
+
+        <nav class="nav-links" id="mainNavigation">
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#features">Features</a>
+
+            <a href="#how-it-works">How It Works</a>
+
+        </nav>
+
+
+        <!-- Buttons -->
+
+        <div class="nav-buttons">
+
+            <a
+                href="login.html"
+                class="login-link"
+            >
+                Login
+            </a>
+
+            <a
+                href="signup.html"
+                class="signup-link"
+            >
+                Sign Up
+            </a>
+
+        </div>
+
+
+        <!-- Mobile Menu -->
+
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mainNavigation"
+        >
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <div class="hero-container">
+
+
+        <!-- Hero Text -->
+
+        <div class="hero-content">
+
+            <span class="hero-tag">
+                🎓 SMARTER WAY TO LEARN
+            </span>
+
+
+            <h1>
+
+                Learn More.
+                <span>Test Yourself.</span>
+                Succeed.
+
+            </h1>
+
+
+            <p>
+
+                Take your learning to the next level with
+                our modern online examination platform.
+                Learn, practice, take exams and track your
+                academic progress from anywhere.
+
+            </p>
+
+
+            <!-- Hero Buttons -->
+
+            <div class="hero-buttons">
+
+                <a
+                    href="signup.html"
+                    class="primary-btn"
+                >
+                    Get Started
+                    <span>→</span>
+                </a>
+
+
+                <a
+                    href="login.html"
+                    class="secondary-btn"
+                >
+                    Login to Account
+                </a>
+
+            </div>
+
+
+            <!-- Small Stats -->
+
+            <div class="hero-stats">
+
+                <div>
+
+                    <strong>100+</strong>
+
+                    <span>Exams</span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>50+</strong>
+
+                    <span>Subjects</span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>24/7</strong>
+
+                    <span>Access</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Exam Illustration -->
+
+        <div class="hero-visual">
+
+            <div class="circle circle-one"></div>
+
+            <div class="circle circle-two"></div>
+
+
+            <div class="exam-card">
+
+                <div class="exam-top">
+
+                    <div>
+
+                        <small>
+                            ONLINE EXAM
+                        </small>
+
+                        <h3>
+                            Mathematics
+                        </h3>
+
+                    </div>
+
+                    <span class="timer">
+                        ⏱ 45:00
+                    </span>
+
+                </div>
+
+
+                <div class="question">
+
+                    <span>
+                        Question 05 of 20
+                    </span>
+
+                    <h4>
+                        If 2x + 5 = 15,
+                        what is the value of x?
+                    </h4>
+
+                </div>
+
+
+                <div class="answers">
+
+                    <div class="answer">
+                        <span>A</span>
+                        3
+                    </div>
+
+                    <div class="answer selected">
+                        <span>B</span>
+                        5
+                        <b>✓</b>
+                    </div>
+
+                    <div class="answer">
+                        <span>C</span>
+                        7
+                    </div>
+
+                    <div class="answer">
+                        <span>D</span>
+                        10
+                    </div>
+
+                </div>
+
+
+                <div class="exam-progress">
+
+                    <div class="progress-bar">
+
+                        <div></div>
+
+                    </div>
+
+                    <span>
+                        25%
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Floating Cards -->
+
+            <div class="floating-card score-card">
+
+                <div class="floating-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <strong>
+                        95%
+                    </strong>
+
+                    <small>
+                        Exam Score
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="floating-card student-card">
+
+                <div class="student-icon">
+                    👨‍🎓
+                </div>
+
+                <div>
+
+                    <strong>
+                        +1,000
+                    </strong>
+
+                    <small>
+                        Students
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT SECTION
+========================= -->
+
+<section
+    class="about"
+    id="about"
+>
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
+            <span>
+                ABOUT OUR PLATFORM
+            </span>
+
+            <h2>
+                Education Made
+                <strong>Simple & Accessible</strong>
+            </h2>
+
+            <p>
+
+                ExamHub provides students with a convenient
+                way to prepare for examinations, practice
+                questions and evaluate their knowledge online.
+
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+
+            <div class="about-card">
+
+                <div class="about-icon">
+                    📚
+                </div>
+
+                <h3>
+                    Learn
+                </h3>
+
+                <p>
+                    Improve your knowledge with structured
+                    learning materials and practice questions.
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <div class="about-icon">
+                    📝
+                </div>
+
+                <h3>
+                    Practice
+                </h3>
+
+                <p>
+                    Practice with different examination
+                    questions and prepare yourself for success.
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <div class="about-icon">
+                    🎯
+                </div>
+
+                <h3>
+                    Improve
+                </h3>
+
+                <p>
+                    Identify areas where you need improvement
+                    and continue developing your knowledge.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section
+    class="features"
+    id="features"
+>
+
+    <div class="section-container">
+
+        <div class="section-heading center">
+
+            <span>
+                WHY CHOOSE US
+            </span>
+
+            <h2>
+                Everything You Need
+                <strong>To Prepare</strong>
+            </h2>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+
+            <div class="feature-card">
+
+                <div class="feature-number">
+                    01
+                </div>
+
+                <div class="feature-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Online Examinations
+                </h3>
+
+                <p>
+                    Take examinations online from
+                    your computer, tablet or phone.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-number">
+                    02
+                </div>
+
+                <div class="feature-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Instant Results
+                </h3>
+
+                <p>
+                    Get your examination score immediately
+                    after completing your exam.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-number">
+                    03
+                </div>
+
+                <div class="feature-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Track Progress
+                </h3>
+
+                <p>
+                    Monitor your performance and see
+                    how your results improve over time.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-number">
+                    04
+                </div>
+
+                <div class="feature-icon">
+                    🔒
+                </div>
+
+                <h3>
+                    Secure Platform
+                </h3>
+
+                <p>
+                    Your account and examination
+                    information are kept secure.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     HOW IT WORKS
+========================= -->
+
+<section
+    class="how-it-works"
+    id="how-it-works"
+>
+
+    <div class="section-container">
+
+        <div class="section-heading center">
+
+            <span>
+                SIMPLE PROCESS
+            </span>
+
+            <h2>
+                How It
+                <strong>Works</strong>
+            </h2>
+
+        </div>
+
+
+        <div class="steps">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <h3>
+                    Create Account
+                </h3>
+
+                <p>
+                    Sign up for a free account
+                    using your details.
+                </p>
+
+            </div>
+
+
+            <div class="step-line"></div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <h3>
+                    Choose Exam
+                </h3>
+
+                <p>
+                    Select the subject or examination
+                    you want to take.
+                </p>
+
+            </div>
+
+
+            <div class="step-line"></div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <h3>
+                    Take Exam
+                </h3>
+
+                <p>
+                    Answer the questions within
+                    the allocated time.
+                </p>
+
+            </div>
+
+
+            <div class="step-line"></div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    4
+                </div>
+
+                <h3>
+                    Get Results
+                </h3>
+
+                <p>
+                    Complete your exam and
+                    view your results.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+    <div class="cta-container">
+
+        <h2>
+            Ready to Start Your
+            Learning Journey?
+        </h2>
+
+        <p>
+            Create your account today and start
+            preparing for your next examination.
+        </p>
+
+        <a
+            href="signup.html"
+            class="cta-btn"
+        >
+            Create Your Account
+            <span>→</span>
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-logo">
+
+            <div class="logo-icon">
+                E
+            </div>
+
+            <span>
+                Exam<span>Hub</span>
+            </span>
+
+        </div>
+
+
+        <p>
+            Empowering students through
+            accessible online education and examinations.
+        </p>
+
+
+        <div class="footer-links">
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#features">
+                Features
+            </a>
+
+            <a href="login.html">
+                Login
+            </a>
+
+            <a href="signup.html">
+                Sign Up
+            </a>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 ExamHub.
+            All Rights Reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- JavaScript -->
+
+   <script>
+    // ==============================
+// MOBILE MENU
+// ==============================
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.querySelector(".nav-links");
+
+menuBtn.addEventListener("click", function () {
+
+    const isOpen = navLinks.classList.toggle("mobile-open");
+
+    menuBtn.setAttribute("aria-expanded", String(isOpen));
+
+    menuBtn.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+
+});
+
+
+// ==============================
+// CLOSE MOBILE MENU
+// ==============================
+
+const links = document.querySelectorAll(".nav-links a");
+
+links.forEach(function (link) {
+
+    link.addEventListener("click", function () {
+
+        navLinks.classList.remove("mobile-open");
+
+        menuBtn.setAttribute("aria-expanded", "false");
+
+        menuBtn.setAttribute("aria-label", "Open navigation menu");
+
+    });
+
+});
+
+
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape") {
+
+        navLinks.classList.remove("mobile-open");
+
+        menuBtn.setAttribute("aria-expanded", "false");
+
+        menuBtn.setAttribute("aria-label", "Open navigation menu");
+
+        menuBtn.focus();
+
+    }
+
+});
+
+    </script>
+
+</body>
+
+</html>

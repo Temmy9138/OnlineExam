@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ExamPro Admin Login</title>
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #213394,
+        #4e5dcc
+    );
+
+    padding: 20px;
+}
+
+
+/* =========================
+   LOGIN CONTAINER
+========================= */
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.2);
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    text-align: center;
+
+    margin-bottom: 10px;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    color: #213394;
+}
+
+.logo span {
+    color: #6d7df5;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.login-title {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.login-title h2 {
+    color: #222;
+
+    margin-bottom: 8px;
+}
+
+.login-title p {
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #213394;
+
+    box-shadow:
+        0 0 0 3px rgba(33,51,148,0.1);
+}
+
+
+/* =========================
+   PASSWORD
+========================= */
+
+.password-box {
+    position: relative;
+}
+
+.password-box input {
+    padding-right: 50px;
+}
+
+.show-password {
+    position: absolute;
+
+    right: 12px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    color: #555;
+
+    padding: 5px;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   OPTIONS
+========================= */
+
+.login-options {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 22px;
+
+    font-size: 13px;
+}
+
+.remember {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #555;
+}
+
+.remember input {
+    width: auto;
+}
+
+.forgot {
+    color: #213394;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.forgot:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.login-btn {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #213394;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #172775;
+}
+
+.login-btn:disabled {
+    opacity: 0.7;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================
+   ERROR MESSAGE
+========================= */
+
+.error-message {
+    display: none;
+
+    background: #ffe8e8;
+
+    color: #d40000;
+
+    padding: 10px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    margin-bottom: 15px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   SIGNUP
+========================= */
+
+.signup {
+    text-align: center;
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #eee;
+
+    font-size: 14px;
+
+    color: #777;
+}
+
+.signup a {
+    color: #213394;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.signup a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #aaa;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .login-container {
+        padding: 25px 20px;
+
+        border-radius: 12px;
+    }
+
+    .logo {
+        font-size: 26px;
+    }
+
+    .login-title h2 {
+        font-size: 21px;
+    }
+
+    .login-options {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+    .forgot {
+        align-self: flex-end;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     LOGIN BOX
+========================= -->
+
+<div class="login-container">
+
+
+    <!-- LOGO -->
+
+    <div class="logo">
+        Exam<span>Pro</span>
+    </div>
+
+
+    <!-- TITLE -->
+
+    <div class="login-title">
+
+        <h2>Admin Login</h2>
+
+        <p>
+            Login to access your administration dashboard.
+        </p>
+
+    </div>
+
+
+    <!-- ERROR -->
+
+    <div
+        class="error-message"
+        id="errorMessage">
+
+        Please enter your username and password.
+
+    </div>
+
+
+    <!-- LOGIN FORM -->
+
+    <form id="loginForm">
+
+
+        <!-- USERNAME -->
+
+        <div class="form-group">
+
+            <label for="username">
+                Username or Email
+            </label>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter username or email"
+                autocomplete="username">
+
+        </div>
+
+
+        <!-- PASSWORD -->
+
+        <div class="form-group">
+
+            <label for="password">
+                Password
+            </label>
+
+
+            <div class="password-box">
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password">
+
+
+                <button
+                    type="button"
+                    class="show-password"
+                    id="showPassword"
+                    onclick="togglePassword()">
+
+                    👁️
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- OPTIONS -->
+
+        <div class="login-options">
+
+
+            <label class="remember">
+
+                <input
+                    type="checkbox"
+                    id="remember">
+
+                Remember me
+
+            </label>
+
+
+            <a
+                href="adminforgotten_password.html"
+                class="forgot">
+
+                Forgot Password?
+
+            </a>
+
+        </div>
+
+
+        <!-- LOGIN BUTTON -->
+
+        <button
+            type="submit"
+            class="login-btn"
+            id="loginBtn">
+
+            Login
+
+        </button>
+
+
+    </form>
+
+
+    <!-- SIGN UP -->
+
+    <div class="signup">
+
+        Don't have an admin account?
+
+        <a
+            href="adminsignup.html">
+
+            Sign Up
+
+        </a>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        © 2026 ExamPro. All Rights Reserved.
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+/* =========================
+   PASSWORD SHOW / HIDE
+========================= */
+
+function togglePassword() {
+
+    const password =
+        document.getElementById("password");
+
+    const button =
+        document.getElementById("showPassword");
+
+
+    if (password.type === "password") {
+
+        password.type = "text";
+
+        button.textContent = "🙈";
+
+    } else {
+
+        password.type = "password";
+
+        button.textContent = "👁️";
+
+    }
+
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+document
+    .getElementById("loginForm")
+    .addEventListener(
+        "submit",
+        async function(event) {
+
+            event.preventDefault();
+
+
+            const username =
+                document
+                .getElementById("username")
+                .value
+                .trim();
+
+
+            const password =
+                document
+                .getElementById("password")
+                .value;
+
+
+            const error =
+                document
+                .getElementById("errorMessage");
+
+
+            const button =
+                document
+                .getElementById("loginBtn");
+
+
+            /* CHECK EMPTY FIELDS */
+
+            if (!username || !password) {
+
+                error.style.display = "block";
+
+                error.textContent =
+                    "Please enter your username and password.";
+
+                return;
+            }
+
+
+            /* PASSWORD LENGTH */
+
+            if (password.length < 6) {
+
+                error.style.display = "block";
+
+                error.textContent =
+                    "Password must be at least 6 characters.";
+
+                return;
+            }
+
+
+            /* HIDE ERROR */
+
+            error.style.display = "none";
+
+
+            /* LOADING */
+
+            button.disabled = true;
+
+            button.textContent = "Logging in...";
+
+            try {
+                const response = await fetch("/api/admin/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        username,
+                        password,
+                        remember: document.getElementById("remember").checked
+                    })
+                });
+
+                if (!response.headers.get("content-type")?.includes("application/json")) {
+                    throw new Error(
+                        "This page is not connected to the ExamPro server. Start it with npm start, then open this page using the host and port shown in the server output."
+                    );
+                }
+
+                const result = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(result.error || "Could not log in.");
+                }
+
+                alert(`Welcome, ${result.username}!`);
+                window.location.href = "admin_dashbroad.html";
+            } catch (loginError) {
+                error.textContent = loginError.message ||
+                    "Cannot connect to the server. Make sure it is running.";
+                error.style.display = "block";
+                button.disabled = false;
+                button.textContent = "Login";
+            }
+
+        }
+    );
+
+
+</script>
+
+</body>
+</html>

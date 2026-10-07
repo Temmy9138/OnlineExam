@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Welcome | Login</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <style>
+     
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #5b4bdb;
+    --primary-dark: #4435b8;
+    --text-dark: #20213a;
+    --text-light: #777a91;
+    --border: #e5e5ef;
+    --white: #ffffff;
+    --background: #f6f7ff;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--background);
+    color: var(--text-dark);
+}
+
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.page {
+    min-height: 100vh;
+    display: flex;
+}
+
+
+/* =========================
+   LEFT / WELCOME SECTION
+========================= */
+
+.welcome-section {
+    width: 52%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 70px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(91, 75, 219, 0.96),
+            rgba(68, 53, 184, 0.96)
+        );
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Decorative circles */
+
+.welcome-section::before,
+.welcome-section::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.welcome-section::before {
+    width: 450px;
+    height: 450px;
+    top: -150px;
+    left: -150px;
+}
+
+.welcome-section::after {
+    width: 500px;
+    height: 500px;
+    bottom: -250px;
+    right: -200px;
+}
+
+
+.welcome-content {
+    max-width: 580px;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+
+.welcome-tag {
+    display: inline-block;
+
+    padding: 8px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 30px;
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+
+.welcome-content h1 {
+    font-size: clamp(40px, 5vw, 68px);
+    line-height: 1.1;
+    font-weight: 700;
+
+    margin-bottom: 25px;
+}
+
+
+.welcome-content h1 span {
+    display: block;
+    color: #dcd8ff;
+}
+
+
+.welcome-content p {
+    max-width: 520px;
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    font-size: 14px;
+}
+
+
+.feature-icon {
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.16);
+    color: white;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   LOGIN SECTION
+========================= */
+
+.login-section {
+    width: 48%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+}
+
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-card {
+    width: 100%;
+    max-width: 450px;
+
+    padding: 45px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 60px rgba(39, 39, 80, 0.10);
+
+    animation: cardAppear 0.7s ease;
+}
+
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 23px;
+    font-weight: 700;
+
+    margin-bottom: 35px;
+}
+
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+    color: white;
+
+    font-size: 20px;
+}
+
+
+.logo span span {
+    color: var(--primary);
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.login-heading {
+    margin-bottom: 30px;
+}
+
+
+.login-heading h2 {
+    font-size: 29px;
+    margin-bottom: 7px;
+}
+
+
+.login-heading p {
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.input-group {
+    margin-bottom: 22px;
+}
+
+
+.input-group label {
+    display: block;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+
+.input-box {
+    height: 53px;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid var(--border);
+    border-radius: 11px;
+
+    padding: 0 14px;
+
+    transition: 0.3s;
+}
+
+
+.input-box:focus-within {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 4px rgba(91, 75, 219, 0.10);
+}
+
+
+.input-icon {
+    margin-right: 10px;
+    opacity: 0.55;
+}
+
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    color: var(--text-dark);
+}
+
+
+.input-box input::placeholder {
+    color: #aaaabd;
+}
+
+
+/* =========================
+   PASSWORD BUTTON
+========================= */
+
+.password-toggle {
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    opacity: 0.55;
+
+    padding: 5px;
+}
+
+
+.password-toggle:hover {
+    opacity: 1;
+}
+
+
+/* =========================
+   FORM OPTIONS
+========================= */
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 5px 0 25px;
+
+    font-size: 12px;
+}
+
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: var(--text-light);
+
+    cursor: pointer;
+}
+
+
+.remember input {
+    accent-color: var(--primary);
+}
+
+
+.forgot {
+    color: var(--primary);
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+
+.forgot:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.login-btn {
+    width: 100%;
+    height: 53px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    border: none;
+    border-radius: 11px;
+
+    background: var(--primary);
+    color: white;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.login-btn:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(91, 75, 219, 0.25);
+}
+
+
+.arrow {
+    font-size: 20px;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin: 28px 0;
+}
+
+
+.divider::before,
+.divider::after {
+    content: "";
+
+    height: 1px;
+
+    flex: 1;
+
+    background: var(--border);
+}
+
+
+.divider span {
+    font-size: 11px;
+    color: #aaa;
+}
+
+
+/* =========================
+   SIGN UP
+========================= */
+
+.signup-text {
+    text-align: center;
+
+    font-size: 13px;
+
+    color: var(--text-light);
+}
+
+
+.signup-text a {
+    color: var(--primary);
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   ERROR MESSAGE
+========================= */
+
+.error-message {
+    display: block;
+
+    color: #e74c3c;
+
+    font-size: 11px;
+
+    margin-top: 5px;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .page {
+        flex-direction: column;
+    }
+
+    .welcome-section {
+        width: 100%;
+        min-height: 420px;
+
+        padding: 50px 30px;
+    }
+
+    .welcome-content {
+        max-width: 650px;
+    }
+
+    .welcome-content h1 {
+        font-size: 48px;
+    }
+
+    .login-section {
+        width: 100%;
+
+        padding: 35px 20px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .welcome-section {
+        min-height: 370px;
+        padding: 40px 25px;
+    }
+
+    .welcome-content h1 {
+        font-size: 38px;
+    }
+
+    .welcome-content p {
+        font-size: 14px;
+    }
+
+    .features {
+        gap: 13px;
+    }
+
+    .feature {
+        font-size: 12px;
+    }
+
+    .login-section {
+        padding: 25px 15px;
+    }
+
+    .login-card {
+        padding: 30px 22px;
+        border-radius: 17px;
+    }
+
+    .login-heading h2 {
+        font-size: 25px;
+    }
+
+    .form-options {
+        font-size: 11px;
+    }
+}
+  </style>
+</head>
+
+<body>
+
+    <main class="page">
+
+        <!-- Left Section -->
+        <section class="welcome-section">
+            <div class="welcome-content">
+                <span class="welcome-tag">WELCOME BACK</span>
+
+                <h1>
+                    Learn. Grow.
+                    <span>Succeed.</span>
+                </h1>
+
+                <p>
+                    Welcome to our platform. Sign in to continue your
+                    learning journey and access everything waiting for you.
+                </p>
+
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">✓</div>
+                        <span>Access your personal dashboard</span>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">✓</div>
+                        <span>Track your progress</span>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">✓</div>
+                        <span>Take exams and view results</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Login Section -->
+        <section class="login-section">
+
+            <div class="login-card">
+
+                <div class="logo">
+                    <div class="logo-icon">E</div>
+                    <span>Exam<span>Hub</span></span>
+                </div>
+
+                <div class="login-heading">
+                    <h2>Welcome Back!</h2>
+                    <p>Please login to your account</p>
+                </div>
+
+
+                <form id="loginForm">
+
+                    <!-- Email or username -->
+                    <div class="input-group">
+                        <label for="email">Email or Username</label>
+
+                        <div class="input-box">
+                            <span class="input-icon">✉</span>
+
+                            <input
+                                type="text"
+                                id="email"
+                                name="identifier"
+                                placeholder="Enter your email or username"
+                                autocomplete="username"
+                                required
+                            >
+                        </div>
+
+                        <small class="error-message" id="emailError"></small>
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="input-group">
+                        <label for="password">Password</label>
+
+                        <div class="input-box">
+                            <span class="input-icon">🔒</span>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="togglePassword"
+                                aria-label="Show password"
+                            >
+                                👁
+                            </button>
+                        </div>
+
+                        <small class="error-message" id="passwordError"></small>
+                    </div>
+
+
+                    <!-- Remember / Forgot -->
+                    <div class="form-options">
+
+                        <label class="remember">
+                            <input type="checkbox">
+                            <span>Remember me</span>
+                        </label>
+
+                        <a href="forgotten_password.html" class="forgot">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+                    <!-- Login Button -->
+                    <button type="submit" class="login-btn">
+                        <span>Login</span>
+                        <span class="arrow">→</span>
+                    </button>
+
+                </form>
+
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+
+                <p class="signup-text">
+                    Don't have an account?
+                    <a href="signup.html">Create Account</a>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script>
+  // ===============================
+// SHOW / HIDE PASSWORD
+// ===============================
+
+const password = document.getElementById("password");
+const togglePassword = document.getElementById("togglePassword");
+
+togglePassword.addEventListener("click", function () {
+
+    if (password.type === "password") {
+        password.type = "text";
+        togglePassword.textContent = "🙈";
+        togglePassword.setAttribute("aria-label", "Hide password");
+    } else {
+        password.type = "password";
+        togglePassword.textContent = "👁";
+        togglePassword.setAttribute("aria-label", "Show password");
+    }
+
+});
+
+
+// ===============================
+// LOGIN FORM
+// ===============================
+
+const loginForm = document.getElementById("loginForm");
+
+loginForm.addEventListener("submit", async function (event) {
+
+    event.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+    const passwordValue = password.value;
+
+    const emailError = document.getElementById("emailError");
+    const passwordError = document.getElementById("passwordError");
+
+    emailError.textContent = "";
+    passwordError.textContent = "";
+
+
+    // Accept the email address or username used during signup.
+    if (email === "") {
+
+        emailError.textContent = "Please enter your email address or username.";
+
+        return;
+    }
+
+
+    // Check password
+    if (passwordValue === "") {
+
+        passwordError.textContent = "Please enter your password.";
+
+        return;
+    }
+
+
+    if (passwordValue.length < 6) {
+
+        passwordError.textContent =
+            "Password must be at least 6 characters.";
+
+        return;
+    }
+
+
+    try {
+        const response = await fetch("/api/student/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                identifier: email,
+                password: passwordValue,
+                remember: document.querySelector(".remember input").checked
+            })
+        });
+        const result = await response.json();
+        if (!response.ok) throw new Error(result.error || "Could not log in.");
+        window.location.href = "student_dashboard.html";
+    } catch (loginError) {
+        passwordError.textContent = loginError.message || "Could not connect to the server. Start it with npm start, then open this page using the host and port shown in the server output.";
+    }
+});
+  </script>
+
+</body>
+</html>
